@@ -13,12 +13,12 @@ void DFS(int start) {
 	visit[0] = true;
 	
 	while (!q.empty()) {
-		int front = q.front();
+		int v = q.front();
 		q.pop();
-		cout << front << " ";
+		cout << v << " ";
 		
-		for (int i = 0; i < graph[front].size(); i++) {
-			int search = graph[front][i];
+		for (int i = 0; i < graph[v].size(); i++) {
+			int search = graph[v][i];
 			if (!visit[search]) {
 				visit[search] = 1;
 				q.push(search);

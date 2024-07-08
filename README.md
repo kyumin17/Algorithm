@@ -9,7 +9,6 @@
 + depth first search
 + breath first search
 + bisection search
-+ parametric search
 
 ### graph
 + dijkstra
