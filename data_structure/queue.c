@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX_SIZE 100
 
 typedef struct {
 	int front;
 	int rear;
-	int size;
 	int* arr;
 } Queue;
 
-Queue* create(int size) {
+Queue* create() {
 	Queue* queue = (Queue*)malloc(sizeof(Queue));
 	queue -> front = 0;
 	queue -> rear = -1;
-	queue -> size = size;
-	queue -> arr = (int *)malloc(size * sizeof(int));
+	queue -> arr = (int *)malloc(MAX_SIZE * sizeof(int));
 	return queue;
 }
 
@@ -24,18 +23,7 @@ int empty(Queue* queue) {
 		return 0;
 }
 
-int full(Queue* queue) {
-	if (queue -> rear == (queue -> size) - 1)
-		return 1;
-	else
-		return 0;
-}
-
 void push(Queue* queue, int data) {
-	if (full(queue)) {
-		queue -> size *= 2;
-		queue -> arr = (int *)realloc(queue -> arr, (queue -> size) * 2 * sizeof(int));
-	}
 	queue -> arr[++(queue -> rear)] = data;
 }
 
@@ -48,12 +36,12 @@ int pop(Queue* queue) {
 
 void print(Queue* queue) {
 	int i;
-	for (i = queue -> front; i <= queue -> rear; i++) {
+	for (i = queue -> front; i <= queue -> rear; i++)
 		printf("%d ", queue -> arr[i]);
-	}
+	printf("\n");
 }
 
-void clear(Queue* queue) {
-	queue -> front = 0;
-	queue -> rear = -1;
+void del(Queue* queue) {
+	free(queue -> arr);
+	free(queue);
 }
