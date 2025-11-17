@@ -8,6 +8,7 @@
 
 ### geometry
 - convex hull
+- intersection
 
 ### graph
 - bellman ford
