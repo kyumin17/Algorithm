@@ -10,23 +10,18 @@ int parent[MAX];
 int v, e;
 
 int find(int x) {
-	if (x == 0) {
-		return x;
-	} else {
-		return parent[x] = find(parent[x]);
-	}
+	if (x == 0) return x;
+	else return parent[x] = find(parent[x]);
 }
 
-void unionRoot(int x, int y) {
+void union_root(int x, int y) {
 	x = find(x);
 	y = find(y);
 	
-	if (x != y) {
-		parent[y] = x;
-	}
+	if (x != y) parent[y] = x;
 }
 
-ll kruskal() {
+ll mst() {
 	ll weight = 0;
 	int size = 0;
 
@@ -36,16 +31,12 @@ ll kruskal() {
 		int f = n.second.first;
 		int s = n.second.second;
 		
-		if (find(f) == find(s)) {
-			continue;
-		}
+		if (find(f) == find(s)) continue;
 		
 		weight += n.first;
 		size++;
-		unionRoot(f, s);
+		union_root(f, s);
 		
-		if (size == v - 1) {
-			return weight;
-		}
+		if (size == v - 1) return weight;
 	}
 }

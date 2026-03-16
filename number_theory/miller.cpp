@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
+using ll = long long;
+
 using namespace std;
-#define ll long long
 
 ll base[] = { 2, 325, 9375, 28178, 450775, 9780504, 1795265022 };
 
@@ -8,11 +9,8 @@ ll rs(ll x, ll y, ll m) {
 	if (y == 0) return 1;
 	if (y == 1) return x % m;
 	
-	if (y % 2 == 0) {
-		return rs(x * x % m, y / 2, m);
-	} else {
-		return x * rs(x * x % m, y / 2, m) % m;
-	}
+	if (y % 2 == 0) return rs(x * x % m, y / 2, m);
+	else return x * rs(x * x % m, y / 2, m) % m;
 }
 
 bool isPrime(ll n) {

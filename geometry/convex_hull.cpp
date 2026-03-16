@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define ll long long
+using ll = long long;
 #define pll pair<ll, ll>
  
 using namespace std;
@@ -32,7 +32,7 @@ bool cmp2(pll a, pll b) {
 	return c > 0;
 }
 
-void convexHull() {
+void convex_hull() {
 	sort(point.begin(), point.end(), cmp1);
 	sort(point.begin() + 1, point.end(), cmp2);
 

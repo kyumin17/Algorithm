@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define MAX 100001
+#define MAX 10000
 
 int n;
 const int k = 19;

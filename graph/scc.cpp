@@ -7,8 +7,8 @@ using namespace std;
 vector<vector<int>> v(MAX), v_rev(MAX);
 vector<bool> vis(MAX);
 vector<int> num(MAX);
-vector<vector<int>> ans;
 vector<int> order;
+vector<vector<int>> v_scc;
 
 void dfs(int n) {
     if (vis[n]) return;
@@ -35,8 +35,8 @@ void scc(int n) {
         if (!num[i]) dfs_rev(i, ++cnt);
     }
 
-    ans.resize(cnt);
+    v_scc.resize(cnt);
     for (int i = 1; i <= n; i++) {
-        ans[num[i]-1].push_back(i);
+        v_scc[num[i]-1].push_back(i);
     }
 }

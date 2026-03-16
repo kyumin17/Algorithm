@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
-using namespace std;
 using ll = long long;
+
+using namespace std;
 
 ll eea(ll x, ll n) {
 	ll a = n, b = 0;

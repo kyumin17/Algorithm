@@ -7,11 +7,11 @@ using namespace std;
 vector<ll> v(4 * MAX), lazy(4 * MAX);
 
 ll init(int n = 1, int s = 1, int e = MAX) {
-	if (s == e) return node[n] = arr[s];
+	if (s == e) return v[n] = v[s];
 	int m = (s + e) / 2;
 	ll lval = init(2 * n, s, m);
 	ll rval = init(2 * n + 1, m + 1, e);
-	return node[n] = lval + rval;
+	return v[n] = lval + rval;
 }
 
 void update_lazy(int n, int s, int e) {
