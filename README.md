@@ -16,9 +16,9 @@
 - floyd warshall
 - mst
 - lca
+- scc
 
 ### number theory
-- repeated squaring
 - extended euclidean algorithm
 - combination
 - miller rabin
